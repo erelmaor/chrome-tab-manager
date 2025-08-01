@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 400px;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        margin: 0;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        margin: 0;
+        color: #1a73e8;
+        font-size: 24px;
+      }
+
+      .header p {
+        margin: 5px 0 0 0;
+        color: #666;
+        font-size: 14px;
+      }
+
+      .section {
+        margin-bottom: 25px;
+      }
+
+      .section h3 {
+        margin: 0 0 15px 0;
+        color: #333;
+        font-size: 16px;
+        border-bottom: 2px solid #e8f0fe;
+        padding-bottom: 5px;
+      }
+
+      .primary-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .action-btn {
+        padding: 12px 8px;
+        background: #1a73e8;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 0.2s;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .action-btn:hover {
+        background: #1557b0;
+        transform: translateY(-1px);
+      }
+
+      .action-btn.secondary {
+        background: #f8f9fa;
+        color: #333;
+        border: 1px solid #dadce0;
+      }
+
+      .action-btn.secondary:hover {
+        background: #e8f0fe;
+      }
+
+      .more-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .more-actions .action-btn {
+        font-size: 12px;
+        padding: 10px 6px;
+      }
+
+      .shortcuts-info {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #e8eaed;
+      }
+
+      .shortcut-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
+
+      .shortcut-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .shortcut-name {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .shortcut-key {
+        background: #fff;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 11px;
+        color: #666;
+        border: 1px solid #dadce0;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #e8eaed;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .footer a {
+        color: #1a73e8;
+        text-decoration: none;
+      }
+
+      .loading {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Tab Master</h1>
+      <p>Advanced Tab Management</p>
+    </div>
+
+    <div class="section">
+      <h3>⚡ Main Actions (with shortcuts)</h3>
+      <div class="primary-actions">
+        <button class="action-btn" data-action="close-other-tabs">
+          Close Others
+        </button>
+        <button class="action-btn" data-action="duplicate-tab">
+          Duplicate Tab
+        </button>
+        <button class="action-btn" data-action="new-tab-close-others">
+          New + Close Others
+        </button>
+        <button class="action-btn" data-action="pin-unpin-tab">
+          Pin/Unpin Tab
+        </button>
+      </div>
+
+      <div class="shortcuts-info">
+        <div class="shortcut-item">
+          <span class="shortcut-name">Close all other tabs</span>
+          <span class="shortcut-key loading" id="shortcut-1">Loading...</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-name">New tab & close others</span>
+          <span class="shortcut-key loading" id="shortcut-2">Loading...</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-name">Duplicate current tab</span>
+          <span class="shortcut-key loading" id="shortcut-3">Loading...</span>
+        </div>
+        <div class="shortcut-item">
+          <span class="shortcut-name">Pin/Unpin current tab</span>
+          <span class="shortcut-key loading" id="shortcut-4">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🔧 Extra Actions (click only)</h3>
+      <div class="more-actions">
+        <button class="action-btn secondary" data-action="close-tabs-left">
+          Close ← Left
+        </button>
+        <button class="action-btn secondary" data-action="close-tabs-right">
+          Close Right →
+        </button>
+        <button class="action-btn secondary" data-action="move-to-new-window">
+          New Window
+        </button>
+        <button class="action-btn secondary" data-action="close-duplicate-tabs">
+          Close Duplicates
+        </button>
+        <button class="action-btn secondary" data-action="close-unpinned-tabs">
+          Close Unpinned
+        </button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>
+        Customize shortcuts at
+        <a href="#" id="shortcut-link">chrome://extensions/shortcuts</a>
+      </p>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

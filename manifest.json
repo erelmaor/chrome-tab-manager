@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Master - Advanced Tab Management",
+  "version": "1.0",
+  "description": "Powerful tab management with customizable keyboard shortcuts",
+  "permissions": ["tabs", "storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tab Master Settings"
+  },
+  "commands": {
+    "close-other-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+W",
+        "mac": "MacCtrl+Shift+W"
+      },
+      "description": "Close all other tabs"
+    },
+    "new-tab-close-others": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+N",
+        "mac": "MacCtrl+Shift+N"
+      },
+      "description": "Open new tab and close others"
+    },
+    "duplicate-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "MacCtrl+Shift+D"
+      },
+      "description": "Duplicate current tab"
+    },
+    "pin-unpin-tab": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "MacCtrl+Shift+P"
+      },
+      "description": "Pin/Unpin current tab"
+    }
+  }
+}
